@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Magic Stone</title>
+  
+  <subtitle>Magic Stone</subtitle>
+  <link href="http://wmagicstone.github.io/atom.xml" rel="self"/>
+  
+  <link href="http://wmagicstone.github.io/"/>
+  <updated>2022-07-18T11:30:12.000Z</updated>
+  <id>http://wmagicstone.github.io/</id>
+  
+  <author>
+    <name>magic stone</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hello Everyone</title>
+    <link href="http://wmagicstone.github.io/2022/07/18/hello-world/"/>
+    <id>http://wmagicstone.github.io/2022/07/18/hello-world/</id>
+    <published>2022-07-18T07:25:45.012Z</published>
+    <updated>2022-07-18T11:30:12.000Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这是我的博客，欢迎大家来参观&lt;/p&gt;
+</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+</feed>
