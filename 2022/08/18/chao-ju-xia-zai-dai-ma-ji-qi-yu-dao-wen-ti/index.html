@@ -5,13 +5,8 @@
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="Magic Stone">
-    <meta name="description" content="NumpyOutLine
-1.向量
-&amp;amp;nbsp;&amp;amp;nbsp;1.1向量格式及类型
-&amp;amp;nbsp;&amp;amp;nbsp;1.2向量索引
-&amp;amp;nbsp;&amp;amp;nbsp;1.3操作向量及运算
-2.矩阵
-&amp;amp;nb">
+    <meta name="description" content="该项目起因因为家里人想要听潮剧的音频，而各大音乐网站又缺少对潮剧的资源支持，于是便尝试在冷门网站上寻找，发现九酷网站有较多的潮剧资源，但由于其简陋的界面和其缺少下载功能，便尝试通过爬虫来进行爬取
+问题处理过程首先尝试最基本的请求下载，用re">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -495,28 +490,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2022-07-25
+                    2022-08-18
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2022-07-25
+                    2022-08-18
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    730
+                    858
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    4 分
                 </div>
                 
 
@@ -536,41 +531,9 @@
 
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h1 id="Numpy"><a href="#Numpy" class="headerlink" title="Numpy"></a>Numpy</h1><h2 id="OutLine"><a href="#OutLine" class="headerlink" title="OutLine"></a>OutLine</h2><ul>
-<li><a href="#numpy_1">1.向量</a></li>
-<li><a href="#numpy_1.1">&amp;nbsp;&amp;nbsp;1.1向量格式及类型</a></li>
-<li><a href="#numpy_1.2">&amp;nbsp;&amp;nbsp;1.2向量索引</a></li>
-<li><a href="#numpy_1.3">&amp;nbsp;&amp;nbsp;1.3操作向量及运算</a></li>
-<li><a href="#numpy_2">2.矩阵</a></li>
-<li><a href="#numpy_2.1">&amp;nbsp;&amp;nbsp;2.1创建矩阵</a></li>
-<li><a href="#numpy_2.2">&amp;nbsp;&amp;nbsp;2.2矩阵索引</a></li>
-<li><a href="#numpy_2.3">&amp;nbsp;&amp;nbsp;2.3矩阵切片</a></li>
-</ul>
-<h3 id="1-向量"><a href="#1-向量" class="headerlink" title="1.向量"></a>1.向量<a name="numpy_1"></a></h3><p><strong>1.1向量格式及类型</strong><a name="numpy_1.1"></a></p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.zeros(<span class="number">4</span>);</span><br><span class="line">a = np.zeros((<span class="number">4</span>,));<span class="comment">#接受shape，即(4,)</span></span><br></pre></td></tr></tbody></table></figure>
-<p>上面两个输出均为：<br>$$a = [0. 0. 0. 0.]$$<br>输出均为浮点数(float64)</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line">a = np.array([<span class="number">5.</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>])<span class="comment">#输出类型为float64，因为有5.</span></span><br><span class="line">a = np.array([<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>],dtype = float64)</span><br><span class="line"><span class="built_in">print</span>(a.dtype)<span class="comment">#打印类型</span></span><br><span class="line"><span class="built_in">print</span>(a.shape)<span class="comment">#打印形状</span></span><br></pre></td></tr></tbody></table></figure>
-<p>上面两个输出均为：<br>$$a = [5. 4. 3. 2.]$$<br><strong>1.2向量索引</strong><a name="numpy_1.2"></a></p>
-<p>Numpy向量索引与列表相似，当访问其中一个元素是其shape为空即()</p>
-<ul>
-<li>可正向索引</li>
-<li>可反向索引</li>
-<li>索引不可超过元素<br>切片也与列表类似<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">a = np.arange(<span class="number">10</span>)<span class="comment">#a = [0 1 2 3 4 5 6 7 8 9]</span></span><br><span class="line">c = a[<span class="number">2</span>:<span class="number">7</span>:<span class="number">1</span>]<span class="comment">#c = [2 3 4 5 6]</span></span><br><span class="line">c = a[<span class="number">2</span>:<span class="number">7</span>:<span class="number">2</span>]<span class="comment">#c = [2 4 6]</span></span><br><span class="line">c = a[<span class="number">3</span>:]<span class="comment">#c = [3 4 5 6 7 8 9]</span></span><br><span class="line">c = a[:<span class="number">3</span>]<span class="comment">#c = [0 1 2]</span></span><br><span class="line">c = a[:]<span class="comment">#c = [0 1 2 3 4 5 6 7 8 9]</span></span><br></pre></td></tr></tbody></table></figure>
-<strong>1.3操作向量及运算</strong><a name="numpy_1.3"></a><br>对于单个向量的操作：<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">b = -a </span><br><span class="line"><span class="comment">#b = [-1 -2 -3 -4]</span></span><br><span class="line"></span><br><span class="line">b = np.<span class="built_in">sum</span>(a)</span><br><span class="line"><span class="comment">#b = 10</span></span><br><span class="line"></span><br><span class="line">b = np.mean(a)</span><br><span class="line"><span class="comment">#b = 2.5,np.mean(a)求平均数</span></span><br><span class="line"></span><br><span class="line">b = a**<span class="number">2</span></span><br><span class="line"><span class="comment">#b = [1 4 9 16]</span></span><br></pre></td></tr></tbody></table></figure>
-两个向量做运算时为向量对应元素进行计算,所以必须两个向量元素个数一致<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([ <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">b = np.array([-<span class="number">1</span>,-<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>])</span><br><span class="line">c = a + b<span class="comment">#c = [0 0 6 8]</span></span><br></pre></td></tr></tbody></table></figure>
-与列表不同，向量可以与数字进行运算，而列表与数字相乘只能让列表扩展<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">b = a * <span class="number">5</span><span class="comment">#b = [5 10 15 20]</span></span><br><span class="line">c = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>]</span><br><span class="line">d = c * <span class="number">2</span><span class="comment">#d = [1,2,3,4,1,2,3,4]</span></span><br></pre></td></tr></tbody></table></figure>
-向量点乘，需要两个向量维度相同,返回一个标量值，标量无shape<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">my_dot</span>(<span class="params">a, b</span>): </span><br><span class="line">    x=<span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(a.shape[<span class="number">0</span>]):</span><br><span class="line">        x = x + a[i] * b[i]</span><br><span class="line">    <span class="keyword">return</span> x</span><br><span class="line">a = np.array([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>])</span><br><span class="line">b = np.array([-<span class="number">1</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>])</span><br><span class="line">c = my_dot(a,b)<span class="comment">#c = 24</span></span><br></pre></td></tr></tbody></table></figure></li>
-</ul>
-<h3 id="2-矩阵"><a href="#2-矩阵" class="headerlink" title="2.矩阵"></a>2.矩阵<a name="numpy_2"></a></h3><p><strong>2.1创建矩阵</strong><a name="numpy_2.1"></a></p>
-<p>创建矩阵，本质上是创建二维向量，其创建方法类似</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">a = np.zeros((<span class="number">1</span>, <span class="number">5</span>))</span><br><span class="line"><span class="comment">#a = [[0. 0. 0. 0. 0.]]</span></span><br><span class="line">b = np.zeros((<span class="number">2</span>, <span class="number">1</span>))</span><br><span class="line"><span class="comment">#b = [[0.]</span></span><br><span class="line"><span class="comment">#[0.]]</span></span><br><span class="line">c = np.random.random_sample((<span class="number">1</span>, <span class="number">1</span>))</span><br><span class="line"><span class="comment">#c = [[0.44236517]]</span></span><br></pre></td></tr></tbody></table></figure>
-<p><strong>2.2矩阵索引</strong><a name="numpy_2.2"></a></p>
-<p>矩阵有两个索引[row,column]<br>reshape()方法用于创建矩阵</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">a = np.arange(<span class="number">6</span>).reshape(-<span class="number">1</span>, <span class="number">2</span>)</span><br><span class="line"><span class="comment">#这个-1指的是在已知列数计算行数</span></span><br><span class="line"><span class="comment">#a.shape: (3, 2), </span></span><br><span class="line"><span class="comment">#a= [[0 1]</span></span><br><span class="line"><span class="comment">#[2 3]</span></span><br><span class="line"><span class="comment">#[4 5]]</span></span><br><span class="line"><span class="comment">#a[2,0].shape = ()</span></span><br><span class="line"><span class="comment">#a[2,0] = 4  </span></span><br><span class="line"><span class="comment">#a[2].shape = (2,)</span></span><br><span class="line"><span class="comment">#a[2] = [4 5]</span></span><br></pre></td></tr></tbody></table></figure>
-<p><strong>2.3矩阵切片</strong><a name="numpy_2.3"></a></p>
-<p>矩阵切片也可以使用[start:stop:step]形式</p>
-<figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a = np.arange(<span class="number">20</span>).reshape(-<span class="number">1</span>, <span class="number">10</span>)</span><br><span class="line"><span class="comment">#a[0, 2:7:1] = [2 3 4 5 6]</span></span><br><span class="line"><span class="comment">#本质先读取索引为0的那一行，然后再进行切片</span></span><br></pre></td></tr></tbody></table></figure>
-
+                <h2 id="该项目起因"><a href="#该项目起因" class="headerlink" title="该项目起因"></a>该项目起因</h2><p>因为家里人想要听潮剧的音频，而各大音乐网站又缺少对潮剧的资源支持，于是便尝试在冷门网站上寻找，发现九酷网站有较多的潮剧资源，但由于其简陋的界面和其缺少下载功能，便尝试通过爬虫来进行爬取</p>
+<h2 id="问题处理过程"><a href="#问题处理过程" class="headerlink" title="问题处理过程"></a>问题处理过程</h2><p>首先尝试最基本的请求下载，用request直接请求url，在源代码找不到音频的播放网址，于是便进入开发者模式筛选出音频的文件直接访问发现其出现了403的返回，在对headers的观察后发现原先我自定义的headers缺少了referer，由此可看出该网址需要满足在本域请求，跨域请求会被禁止，为了避免其他由于headers出现的问题，便将headers完善的和浏览器一致，又考虑在源代码处没有音频的url，则考虑其应该是ajax的形式加载，于是便筛选xhr文件发现其playlist.php出现了包含音频网址的json格式，但我对其进行get请求后发现返回空白，在浏览器直接访问其网址也显示空白，后来仔细看给出的信息发现该请求是post请求，直接用get请求会返回不一样的界面</p>
+<h2 id="代码实现过程"><a href="#代码实现过程" class="headerlink" title="代码实现过程"></a>代码实现过程</h2><figure class="highlight python"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"></span><br><span class="line">file = <span class="string">"D:\\Desktop\\潮剧下载"</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(file):</span><br><span class="line">    os.mkdir(file)</span><br><span class="line">os.chdir(file)</span><br><span class="line"></span><br><span class="line">cookies = {</span><br><span class="line">    <span class="string">'tt'</span>: <span class="string">'ok'</span>,</span><br><span class="line">    <span class="string">'cc'</span>: <span class="string">'ok'</span>,</span><br><span class="line">    <span class="string">'pp'</span>: <span class="string">'ok'</span>,</span><br><span class="line">    <span class="string">'_gid'</span>: <span class="string">'GA1.2.192858228.1660697434'</span>,</span><br><span class="line">    <span class="string">'Hm_lvt_2698d85c1eaff072c02e1fb3b945eaff'</span>: <span class="string">'1660697836'</span>,</span><br><span class="line">    <span class="string">'jpvolume'</span>: <span class="string">'0.738'</span>,</span><br><span class="line">    <span class="string">'tmp_addplay'</span>: <span class="string">''</span>,</span><br><span class="line">    <span class="string">'Hm_lvt_a5de315acb973b8e6da83458c9e456d3'</span>: <span class="string">'1660181157,1660697423,1660722528,1660786572'</span>,</span><br><span class="line">    <span class="string">'_gat_gtag_UA_83639769_5'</span>: <span class="string">'1'</span>,</span><br><span class="line">    <span class="string">'ff'</span>: <span class="string">'ok'</span>,</span><br><span class="line">    <span class="string">'l_music'</span>: <span class="string">'934435/934408/42620/934478/934477/859925/888053/934351/934520/934284/860206/934504l_end'</span>,</span><br><span class="line">    <span class="string">'visit_nums'</span>: <span class="string">'2'</span>,</span><br><span class="line">    <span class="string">'shows'</span>: <span class="string">'ok'</span>,</span><br><span class="line">    <span class="string">'jk_ifplay'</span>: <span class="string">'1'</span>,</span><br><span class="line">    <span class="string">'_ga_4BBS961T5P'</span>: <span class="string">'GS1.1.1660786581.8.1.1660786600.0.0.0'</span>,</span><br><span class="line">    <span class="string">'_ga'</span>: <span class="string">'GA1.2.83816721.1660181158'</span>,</span><br><span class="line">    <span class="string">'Hm_lpvt_a5de315acb973b8e6da83458c9e456d3'</span>: <span class="string">'1660786600'</span>,</span><br><span class="line">    <span class="string">'jk_addplay'</span>: <span class="string">'934408/934409/934410/934411/934412/934413/934414/934415/934416/934417/934418/934419/934420/934421/934422/934423/934424/934425/934426/934427/934428/934431/934432/934433/934435/934436/934437/934438/934439/934440/934441/934442/934443/934444/934445/934446/934447/934448/934449/934450/934504/934284/934539/934534/934351/934451/934505/934257/934520/934268/934276/934312/934401/934429/934430/934434/934460/934462/934473/934476/934481/934484/934499/934245/934503/934506/934510/934527/934274/934275/934546/934319/934396/934400/934402/934403/934404/934405/934406/934407/934452/934453/934454/934455/934456/934457/934458/934459/934461/934463/934464/934465/934466/934467/934468/934469/934470/934471/934472/934474/934475/934477/934478/934479/934480/934482/934483/934485/934486/934487/934488/934489/934490/934491/934492/934237/934493/934238/934494/934239'</span>,</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">headers = {</span><br><span class="line">    <span class="string">'Accept'</span>: <span class="string">'*/*'</span>,</span><br><span class="line">    <span class="string">'Accept-Language'</span>: <span class="string">'zh-CN,zh;q=0.9,en;q=0.8,en-GB;q=0.7,en-US;q=0.6'</span>,</span><br><span class="line">    <span class="string">'Connection'</span>: <span class="string">'keep-alive'</span>,</span><br><span class="line">    <span class="string">'Content-Type'</span>: <span class="string">'application/x-www-form-urlencoded; charset=UTF-8'</span>,</span><br><span class="line">    <span class="string">'Origin'</span>: <span class="string">'https://www.9ku.com'</span>,</span><br><span class="line">    <span class="string">'Referer'</span>: <span class="string">'https://www.9ku.com/play/934435.htm'</span>,</span><br><span class="line">    <span class="string">'Sec-Fetch-Dest'</span>: <span class="string">'empty'</span>,</span><br><span class="line">    <span class="string">'Sec-Fetch-Mode'</span>: <span class="string">'cors'</span>,</span><br><span class="line">    <span class="string">'Sec-Fetch-Site'</span>: <span class="string">'same-origin'</span>,</span><br><span class="line">    <span class="string">'User-Agent'</span>: <span class="string">'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.81 Safari/537.36 Edg/104.0.1293.54'</span>,</span><br><span class="line">    <span class="string">'X-Requested-With'</span>: <span class="string">'XMLHttpRequest'</span>,</span><br><span class="line">    <span class="string">'sec-ch-ua'</span>: <span class="string">'"Chromium";v="104", " Not A;Brand";v="99", "Microsoft Edge";v="104"'</span>,</span><br><span class="line">    <span class="string">'sec-ch-ua-mobile'</span>: <span class="string">'?0'</span>,</span><br><span class="line">    <span class="string">'sec-ch-ua-platform'</span>: <span class="string">'"Windows"'</span>,</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">data = {</span><br><span class="line">    <span class="string">'ids'</span>: <span class="string">'934408,934409,934410,934411,934412,934413,934414,934415,934416,934417,934418,934419,934420,934421,934422,934423,934424,934425,934426,934427,934428,934431,934432,934433,934435,934436,934437,934438,934439,934440,934441,934442,934443,934444,934445,934446,934447,934448,934449,934450,934504,934284,934539,934534,934351,934451,934505,934257,934520,934268,934276,934312,934401,934429,934430,934434,934460,934462,934473,934476,934481,934484,934499,934245,934503,934506,934510,934527,934274,934275,934546,934319,934396,934400,934402,934403,934404,934405,934406,934407,934452,934453,934454,934455,934456,934457,934458,934459,934461,934463,934464,934465,934466,934467,934468,934469,934470,934471,934472,934474,934475,934477,934478,934479,934480,934482,934483,934485,934486,934487,934488,934489,934490,934491,934492,934237,934493,934238,934494,934239'</span>,</span><br><span class="line">}</span><br><span class="line"></span><br><span class="line">response = requests.post(<span class="string">'https://www.9ku.com/playlist.php'</span>, cookies=cookies, headers=headers, data=data)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> response.json():</span><br><span class="line">    url = i[<span class="string">'wma'</span>]</span><br><span class="line">    title = i[<span class="string">'mname'</span>]</span><br><span class="line">    <span class="comment"># print(url,title) </span></span><br><span class="line">    response_final = requests.get(url,headers=headers)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(title + <span class="string">'.mp3'</span>,<span class="string">'wb'</span>) <span class="keyword">as</span> f:</span><br><span class="line">        f.write(response_final.content)</span><br><span class="line">    <span class="built_in">print</span>(title + <span class="string">"正在下载中"</span>)</span><br></pre></td></tr></tbody></table></figure>
                 
             </div>
             <hr/>
@@ -596,7 +559,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="http://wmagicstone.github.io/2022/07/25/numpy/">http://wmagicstone.github.io/2022/07/25/numpy/</a>
+                    <a href="http://wmagicstone.github.io/2022/08/18/chao-ju-xia-zai-dai-ma-ji-qi-yu-dao-wen-ti/">http://wmagicstone.github.io/2022/08/18/chao-ju-xia-zai-dai-ma-ji-qi-yu-dao-wen-ti/</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -676,7 +639,7 @@
         repo: 'Comment',
         owner: 'wmagicstone',
         admin: ["wmagicstone"],
-        id: '2022-07-25T17-42-52',
+        id: '2022-08-18T10-36-48',
         distractionFreeMode: false  // Facebook-like distraction free mode
     });
 
@@ -698,8 +661,8 @@
 
 <script type="text/javascript">
     disqus_config = function () {
-        this.page.url = 'http://wmagicstone.github.io/2022/07/25/numpy/';
-        this.page.identifier = '/2022/07/25/numpy/';
+        this.page.url = 'http://wmagicstone.github.io/2022/08/18/chao-ju-xia-zai-dai-ma-ji-qi-yu-dao-wen-ti/';
+        this.page.identifier = '/2022/08/18/chao-ju-xia-zai-dai-ma-ji-qi-yu-dao-wen-ti/';
         this.page.title = '';
     };
     let disqus_shortname = '';
@@ -737,7 +700,7 @@
                 <i class="far fa-dot-circle"></i>&nbsp;本篇
             </div>
             <div class="card">
-                <a href="/2022/07/25/numpy/">
+                <a href="/2022/08/18/chao-ju-xia-zai-dai-ma-ji-qi-yu-dao-wen-ti/">
                     <div class="card-image">
                         
                         
@@ -754,7 +717,7 @@
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2022-07-25
+                                <i class="far fa-clock fa-fw icon-date"></i>2022-08-18
                             </span>
                         <span class="publish-author">
                             
@@ -820,8 +783,6 @@
 
 <!-- 代码语言 -->
 
-<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
-
 
 <!-- 代码块复制 -->
 
@@ -829,8 +790,6 @@
 
 
 <!-- 代码块收缩 -->
-
-<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
 
 
 
@@ -992,7 +951,7 @@
             <br>
             
                 &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                        class="white-color">930</span>
+                        class="white-color">1.1k</span>
             
             
             
